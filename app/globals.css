@@ -1,18 +1,25 @@
+/* eslint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --game-accent-color: #44FFED;
-  --game-glow-color: #00ff9d;
-}
+/* eslint-enable */
 
 @layer base {
-  * {
-    @apply border-game-primary/30;
+  :root {
+    --game-accent-color: #44FFED;
+    --game-glow-color: #00ff9d;
+    --game-primary: theme('colors.game-primary');
+    --game-dark: theme('colors.game-dark');
+    --game-secondary: theme('colors.game-secondary');
   }
+
+  * {
+    border-color: rgb(var(--game-primary) / 0.3);
+  }
+
   body {
-    @apply bg-game-dark text-game-light;
+    background-color: var(--game-dark);
+    color: theme('colors.game-light');
   }
 }
 
@@ -22,15 +29,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-game-dark;
+  background-color: var(--game-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-game-primary rounded-full;
+  background-color: var(--game-primary);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-game-secondary;
+  background-color: var(--game-secondary);
 }
 
 /* Pixel Art Cursor */
@@ -144,4 +152,22 @@ a:hover {
   100% {
     box-shadow: 0 0 10px var(--game-glow-color);
   }
+}
+
+/* Purple Hover Glow for Headers */
+.about-header-hover {
+  color: var(--game-accent-color);
+  transform: translate3d(0, 0, 0);
+  perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: block;
+  text-align: center;
+  transition: none;
+}
+
+.about-header-hover:hover {
+  color: #201439;
+  text-shadow: 0 0 15px #201439;
+  transform: translate3d(0, 0, 0) scale(1.02);
 }

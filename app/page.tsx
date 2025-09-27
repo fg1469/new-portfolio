@@ -85,7 +85,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-game text-game-accent text-center mb-12">About Me</h2>
+          <h2 className="text-3xl font-game text-game-accent text-center mb-12 about-header-hover">About Me</h2>
           <Card className="p-6 bg-game-dark/50 border-game-primary/30 glow-card"> {/* Added glow-card class */}
             <ScrollArea className="h-[400px] w-full pr-4">
               <div className="space-y-6 text-game-light/90">
